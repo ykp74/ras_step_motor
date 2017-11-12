@@ -1,7 +1,7 @@
-#include <unistd.h>//Needed for I2C port
-#include <fcntl.h>//Needed for I2C port
-#include <sys/ioctl.h>//Needed for I2C port
-#include <linux/i2c-dev.h>//Needed for I2C port
+#include <unistd.h>			//Needed for I2C port
+#include <fcntl.h>			//Needed for I2C port
+#include <sys/ioctl.h>		//Needed for I2C port
+#include <linux/i2c-dev.h>	//Needed for I2C port
 #include <stdio.h>
 #include <string.h>
 
@@ -99,4 +99,5 @@ class SSD1306
         void writeI2C(unsigned char* data, int bytes); 
         void scrollUp(int); 
 };
+
 #endif

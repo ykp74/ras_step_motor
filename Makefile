@@ -6,13 +6,13 @@ CXX = g++
 INC = \include
 OUT = \out
 LIBS = -lwiringPi -lwiringPiDev -lpthread -lncurses
-CFLAGS = -w -I$(INC)
+CFLAGS = -w -I$(INC)
 CPPFLAGS = -w -O2 -Wall -std=c++11 -I$(INC)
 
 SRCS = main.cpp \
-	joypad.cpp \
-	control.cpp \
-	motor_driver.cpp
+ joypad.cpp \
+ control.cpp \
+ motor_driver.cpp
 
 SRCS_SSD = ssd1306/ssd1306.cpp
 
