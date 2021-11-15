@@ -10,13 +10,14 @@
 #include <wiringPi.h>
 
 #include "main.h"
+#include "control.h"
+#include "ssd1306/ssd1306.h"
 
 //Thread feature
 #define NUM_THREADS 3
 
 extern void motor_init(void);
 extern void motor_clock_task(void);
-extern int SSD1306_init(void);
 
 _info info;         /* information */
 SSD1306 myDisplay;  /* Define Local dispaly value */
@@ -26,6 +27,7 @@ SSD1306 myDisplay;  /* Define Local dispaly value */
 /*********************************************************************/
 void *ThreadProcs(void *threadid)
 {
+    
     int i,k,m;
     int ch;
     int thread_id = (int)threadid;
@@ -35,6 +37,9 @@ void *ThreadProcs(void *threadid)
             motor_clock_task();
             break;
         case 1:
+            joypad_task();
+            break;
+        case 2:
             //THIS THREAD WILL MAKE THE PROGRAM EXIT
             wmove(stdscr, 1, 0);
             addstr("Type \"q\" to quit.\n");
@@ -71,10 +76,6 @@ void *ThreadProcs(void *threadid)
             }
 #endif
             }
-            break;
-
-        case 2:
-            joypad_task();
             break;
         default:
             break;

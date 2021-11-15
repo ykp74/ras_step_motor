@@ -1,7 +1,8 @@
-#include "../ssd1306/ssd1306.h"
-
 #ifndef _MAIN_H
 #define _MAIN_H
+
+#include "../ssd1306/ssd1306.h"
+
 /*
     main header file by KSND
 */
@@ -23,7 +24,8 @@ typedef struct _info{
 extern _info info;         /* information */
 extern SSD1306 myDisplay;  /* Define Local dispaly value */
 
-#define MIN_SPEED 327670
+//#define MIN_SPEED 327670
+#define MIN_SPEED 300
 #define MAX_SPEED 1
 
 #define STATUS_FORWARD  0x1

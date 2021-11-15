@@ -100,4 +100,6 @@ class SSD1306
         void scrollUp(int); 
 };
 
+int SSD1306_init(void);
+
 #endif

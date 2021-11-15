@@ -1,3 +1,6 @@
+#ifndef _JOYPAD_H
+#define _JOYPAD_H
+
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
@@ -11,3 +14,5 @@
 extern int joypad_init(void);
 extern void joypad_task(void);
 #endif
+
+#endif /* _JOYPAD_H */
